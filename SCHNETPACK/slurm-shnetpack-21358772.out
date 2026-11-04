@@ -1,0 +1,243 @@
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/hydra/_internal/config_loader_impl.py:216: UserWarning: provider=hydra.searchpath in main, path=/scratch/work/riekkia3/Special_Assignment/SCHNETPACK/configs is not available.
+  warnings.warn(
+
+   _____      __    _   __     __  ____             __
+  / ___/_____/ /_  / | / /__  / /_/ __ \____ ______/ /__
+  \__ \/ ___/ __ \/  |/ / _ \/ __/ /_/ / __ `/ ___/ //_/
+ ___/ / /__/ / / / /|  /  __/ /_/ ____/ /_/ / /__/ ,<
+/____/\___/_/ /_/_/ |_/\___/\__/_/    \__,_/\___/_/|_|
+
+[2026-11-02 16:31:51,334][schnetpack.cli][INFO] - Running on host: csl9.int.triton.aalto.fi
+[2026-11-02 16:31:51,574][schnetpack.cli][INFO] - Seed randomly with <3650306237>
+[rank: 0] Seed set to 3650306237
+⚙ Running with the following config:
+├── run
+│   └── work_dir: ${hydra:runtime.cwd}                                          
+│       data_dir: ${run.work_dir}/data                                          
+│       path: ${run.work_dir}/runs                                              
+│       experiment: qm9_${globals.property}                                     
+│       id: ${uuid:1}                                                           
+│       ckpt_path: null                                                         
+│                                                                               
+├── globals
+│   └── model_path: best_model                                                  
+│       cutoff: 5.0                                                             
+│       lr: 0.0005                                                              
+│       property: energy_U0                                                     
+│       aggregation: sum                                                        
+│                                                                               
+├── data
+│   └── _target_: schnetpack.datasets.QM9                                       
+│       datapath: ${run.data_dir}/qm9.db                                        
+│       data_workdir: null                                                      
+│       batch_size: 100                                                         
+│       num_train: 110000                                                       
+│       num_val: 10000                                                          
+│       num_test: null                                                          
+│       num_workers: 8                                                          
+│       num_val_workers: null                                                   
+│       num_test_workers: null                                                  
+│       train_sampler_cls: null                                                 
+│       remove_uncharacterized: true                                            
+│       distance_unit: Ang                                                      
+│       property_units:                                                         
+│         energy_U0: eV                                                         
+│         energy_U: eV                                                          
+│         enthalpy_H: eV                                                        
+│         free_energy: eV                                                       
+│         homo: eV                                                              
+│         lumo: eV                                                              
+│         gap: eV                                                               
+│         zpve: eV                                                              
+│       transforms:                                                             
+│       - _target_: schnetpack.transform.SubtractCenterOfMass                   
+│       - _target_: schnetpack.transform.RemoveOffsets                          
+│         property: ${globals.property}                                         
+│         remove_atomrefs: true                                                 
+│         remove_mean: true                                                     
+│       - _target_: schnetpack.transform.MatScipyNeighborList                   
+│         cutoff: ${globals.cutoff}                                             
+│       - _target_: schnetpack.transform.CastTo32                               
+│                                                                               
+├── model
+│   └── representation:                                                         
+│         radial_basis:                                                         
+│           _target_: schnetpack.nn.radial.GaussianRBF                          
+│           n_rbf: 20                                                           
+│           cutoff: ${globals.cutoff}                                           
+│         _target_: schnetpack.representation.PaiNN                             
+│         n_atom_basis: 128                                                     
+│         n_interactions: 3                                                     
+│         shared_interactions: false                                            
+│         shared_filters: false                                                 
+│         cutoff_fn:                                                            
+│           _target_: schnetpack.nn.cutoff.CosineCutoff                         
+│           cutoff: ${globals.cutoff}                                           
+│       _target_: schnetpack.model.NeuralNetworkPotential                       
+│       input_modules:                                                          
+│       - _target_: schnetpack.atomistic.PairwiseDistances                      
+│       output_modules:                                                         
+│       - _target_: schnetpack.atomistic.Atomwise                               
+│         output_key: ${globals.property}                                       
+│         n_in: ${model.representation.n_atom_basis}                            
+│         aggregation_mode: ${globals.aggregation}                              
+│       postprocessors:                                                         
+│       - _target_: schnetpack.transform.CastTo64                               
+│       - _target_: schnetpack.transform.AddOffsets                             
+│         property: ${globals.property}                                         
+│         add_mean: true                                                        
+│         add_atomrefs: true                                                    
+│                                                                               
+├── task
+│   └── _target_: schnetpack.AtomisticTask                                      
+│       outputs:                                                                
+│       - _target_: schnetpack.task.ModelOutput                                 
+│         name: ${globals.property}                                             
+│         loss_fn:                                                              
+│           _target_: torch.nn.MSELoss                                          
+│         metrics:                                                              
+│           mae:                                                                
+│             _target_: torchmetrics.regression.MeanAbsoluteError               
+│           rmse:                                                               
+│             _target_: torchmetrics.regression.MeanSquaredError                
+│             squared: false                                                    
+│         loss_weight: 1.0                                                      
+│       warmup_steps: 0                                                         
+│       optimizer_cls: torch.optim.AdamW                                        
+│       optimizer_args:                                                         
+│         lr: ${globals.lr}                                                     
+│         weight_decay: 0.0                                                     
+│       scheduler_cls: schnetpack.train.ReduceLROnPlateau                       
+│       scheduler_monitor: val_loss                                             
+│       scheduler_args:                                                         
+│         mode: min                                                             
+│         factor: 0.5                                                           
+│         patience: 75                                                          
+│         threshold: 0.0                                                        
+│         threshold_mode: rel                                                   
+│         cooldown: 10                                                          
+│         min_lr: 0.0                                                           
+│         smoothing_factor: 0.0                                                 
+│                                                                               
+├── trainer
+│   └── _target_: pytorch_lightning.Trainer                                     
+│       devices: 1                                                              
+│       min_epochs: null                                                        
+│       max_epochs: 100000                                                      
+│       enable_model_summary: true                                              
+│       profiler: null                                                          
+│       gradient_clip_val: null                                                 
+│       accumulate_grad_batches: 1                                              
+│       val_check_interval: 1.0                                                 
+│       check_val_every_n_epoch: 1                                              
+│       num_sanity_val_steps: 0                                                 
+│       fast_dev_run: false                                                     
+│       overfit_batches: 0                                                      
+│       limit_train_batches: 1.0                                                
+│       limit_val_batches: 1.0                                                  
+│       limit_test_batches: 1.0                                                 
+│       detect_anomaly: false                                                   
+│       precision: 32                                                           
+│       accelerator: auto                                                       
+│       num_nodes: 1                                                            
+│       deterministic: false                                                    
+│       inference_mode: false                                                   
+│                                                                               
+├── callbacks
+│   └── model_checkpoint:                                                       
+│         _target_: schnetpack.train.ModelCheckpoint                            
+│         monitor: val_loss                                                     
+│         save_top_k: 1                                                         
+│         save_last: true                                                       
+│         mode: min                                                             
+│         verbose: false                                                        
+│         dirpath: checkpoints/                                                 
+│         filename: '{epoch:02d}'                                               
+│         model_path: ${globals.model_path}                                     
+│       early_stopping:                                                         
+│         _target_: pytorch_lightning.callbacks.EarlyStopping                   
+│         monitor: val_loss                                                     
+│         patience: 200                                                         
+│         mode: min                                                             
+│         min_delta: 0.0                                                        
+│         check_on_train_epoch_end: false                                       
+│       lr_monitor:                                                             
+│         _target_: pytorch_lightning.callbacks.LearningRateMonitor             
+│         logging_interval: epoch                                               
+│       ema:                                                                    
+│         _target_: schnetpack.train.ExponentialMovingAverage                   
+│         decay: 0.995                                                          
+│                                                                               
+├── logger
+│   └── tensorboard:                                                            
+│         _target_: pytorch_lightning.loggers.tensorboard.TensorBoardLogger     
+│         save_dir: tensorboard/                                                
+│         name: default                                                         
+│                                                                               
+└── seed
+    └── 3650306237                                                              
+[2026-11-02 16:31:51,642][schnetpack.cli][INFO] - Instantiating datamodule <schnetpack.datasets.QM9>
+[2026-11-02 16:31:51,650][schnetpack.cli][INFO] - Instantiating model <schnetpack.model.NeuralNetworkPotential>
+[2026-11-02 16:31:51,663][schnetpack.cli][INFO] - Instantiating task <schnetpack.AtomisticTask>
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/utilities/parsing.py:213: Attribute 'model' is an instance of `nn.Module` and is already saved during checkpointing. It is recommended to ignore them using `self.save_hyperparameters(ignore=['model'])`.
+[2026-11-02 16:31:51,703][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ModelCheckpoint>
+[2026-11-02 16:31:51,706][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2026-11-02 16:31:51,707][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.LearningRateMonitor>
+[2026-11-02 16:31:51,708][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ExponentialMovingAverage>
+[2026-11-02 16:31:51,708][schnetpack.cli][INFO] - Instantiating logger <pytorch_lightning.loggers.tensorboard.TensorBoardLogger>
+[2026-11-02 16:31:51,710][schnetpack.cli][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+`Trainer(limit_train_batches=1.0)` was configured so 100% of the batches per epoch will be used..
+`Trainer(limit_val_batches=1.0)` was configured so 100% of the batches will be used..
+`Trainer(limit_test_batches=1.0)` was configured so 100% of the batches will be used..
+`Trainer(val_check_interval=1.0)` was configured so validation will run at the end of the training epoch..
+[2026-11-02 16:31:51,724][schnetpack.cli][INFO] - Logging hyperparameters.
+[2026-11-02 16:31:52,072][schnetpack.cli][INFO] - Starting training.
+Error executing job with overrides: ['experiment=qm9_atomwise']
+Traceback (most recent call last):
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/cli.py", line 177, in train
+    trainer.fit(model=task, datamodule=datamodule, ckpt_path=config.run.ckpt_path)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 584, in fit
+    call._call_and_handle_interrupt(
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 630, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 1039, in _run
+    call._call_setup_hook(self)  # allow user to set up LightningModule in accelerator environment
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/call.py", line 108, in _call_setup_hook
+    _call_lightning_datamodule_hook(trainer, "setup", stage=fn)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/call.py", line 199, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/datamodule.py", line 200, in setup
+    self._setup_transforms()
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/datamodule.py", line 350, in _setup_transforms
+    t.datamodule(self)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/transform/atomistic.py", line 134, in datamodule
+    stats = _datamodule.get_stats(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/datamodule.py", line 367, in get_stats
+    self.train_dataloader(),
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/datamodule.py", line 409, in train_dataloader
+    self._train_dataloader = AtomsLoader(
+                             ^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/loader.py", line 76, in __init__
+    super(AtomsLoader, self).__init__(
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 401, in __init__
+    sampler = RandomSampler(dataset, generator=generator)  # type: ignore[arg-type]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/torch/utils/data/sampler.py", line 149, in __init__
+    raise ValueError(
+ValueError: num_samples should be a positive integer value, but got num_samples=0
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+srun: error: csl9: task 0: Exited with exit code 1
+srun: Terminating StepId=21358772.0

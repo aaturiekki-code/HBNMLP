@@ -1,0 +1,13 @@
+name: schnetpack
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - numpy=2.0.0
+  - pip:
+    - torch
+    - lightning
+    - hydra-core
+    - ase 
+    - schnetpack

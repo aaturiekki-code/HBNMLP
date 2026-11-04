@@ -1,0 +1,669 @@
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/hydra/_internal/config_loader_impl.py:216: UserWarning: provider=hydra.searchpath in main, path=/scratch/work/riekkia3/Special_Assignment/SCHNETPACK/configs is not available.
+  warnings.warn(
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/hydra/_internal/config_loader_impl.py:216: UserWarning: provider=hydra.searchpath in main, path=/scratch/work/riekkia3/Special_Assignment/SCHNETPACK/configs is not available.
+  warnings.warn(
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/hydra/_internal/config_loader_impl.py:216: UserWarning: provider=hydra.searchpath in main, path=/scratch/work/riekkia3/Special_Assignment/SCHNETPACK/configs is not available.
+  warnings.warn(
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/hydra/_internal/config_loader_impl.py:216: UserWarning: provider=hydra.searchpath in main, path=/scratch/work/riekkia3/Special_Assignment/SCHNETPACK/configs is not available.
+  warnings.warn(
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/hydra/_internal/config_loader_impl.py:216: UserWarning: provider=hydra.searchpath in main, path=/scratch/work/riekkia3/Special_Assignment/SCHNETPACK/configs is not available.
+  warnings.warn(
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/hydra/_internal/config_loader_impl.py:216: UserWarning: provider=hydra.searchpath in main, path=/scratch/work/riekkia3/Special_Assignment/SCHNETPACK/configs is not available.
+  warnings.warn(
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/hydra/_internal/config_loader_impl.py:216: UserWarning: provider=hydra.searchpath in main, path=/scratch/work/riekkia3/Special_Assignment/SCHNETPACK/configs is not available.
+  warnings.warn(
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/hydra/_internal/config_loader_impl.py:216: UserWarning: provider=hydra.searchpath in main, path=/scratch/work/riekkia3/Special_Assignment/SCHNETPACK/configs is not available.
+  warnings.warn(
+
+   _____      __    _   __     __  ____             __
+  / ___/_____/ /_  / | / /__  / /_/ __ \____ ______/ /__
+  \__ \/ ___/ __ \/  |/ / _ \/ __/ /_/ / __ `/ ___/ //_/
+ ___/ / /__/ / / / /|  /  __/ /_/ ____/ /_/ / /__/ ,<
+/____/\___/_/ /_/_/ |_/\___/\__/_/    \__,_/\___/_/|_|
+
+[2026-11-02 16:29:40,633][schnetpack.cli][INFO] - Running on host: csl9.int.triton.aalto.fi
+
+   _____      __    _   __     __  ____             __
+  / ___/_____/ /_  / | / /__  / /_/ __ \____ ______/ /__
+  \__ \/ ___/ __ \/  |/ / _ \/ __/ /_/ / __ `/ ___/ //_/
+ ___/ / /__/ / / / /|  /  __/ /_/ ____/ /_/ / /__/ ,<
+/____/\___/_/ /_/_/ |_/\___/\__/_/    \__,_/\___/_/|_|
+
+[2026-11-02 16:29:40,633][schnetpack.cli][INFO] - Running on host: csl9.int.triton.aalto.fi
+
+   _____      __    _   __     __  ____             __
+  / ___/_____/ /_  / | / /__  / /_/ __ \____ ______/ /__
+  \__ \/ ___/ __ \/  |/ / _ \/ __/ /_/ / __ `/ ___/ //_/
+ ___/ / /__/ / / / /|  /  __/ /_/ ____/ /_/ / /__/ ,<
+/____/\___/_/ /_/_/ |_/\___/\__/_/    \__,_/\___/_/|_|
+
+[2026-11-02 16:29:40,634][schnetpack.cli][INFO] - Running on host: csl9.int.triton.aalto.fi
+
+   _____      __    _   __     __  ____             __
+  / ___/_____/ /_  / | / /__  / /_/ __ \____ ______/ /__
+  \__ \/ ___/ __ \/  |/ / _ \/ __/ /_/ / __ `/ ___/ //_/
+ ___/ / /__/ / / / /|  /  __/ /_/ ____/ /_/ / /__/ ,<
+/____/\___/_/ /_/_/ |_/\___/\__/_/    \__,_/\___/_/|_|
+
+[2026-11-02 16:29:40,634][schnetpack.cli][INFO] - Running on host: csl9.int.triton.aalto.fi
+
+   _____      __    _   __     __  ____             __
+  / ___/_____/ /_  / | / /__  / /_/ __ \____ ______/ /__
+  \__ \/ ___/ __ \/  |/ / _ \/ __/ /_/ / __ `/ ___/ //_/
+ ___/ / /__/ / / / /|  /  __/ /_/ ____/ /_/ / /__/ ,<
+/____/\___/_/ /_/_/ |_/\___/\__/_/    \__,_/\___/_/|_|
+
+[2026-11-02 16:29:40,634][schnetpack.cli][INFO] - Running on host: csl9.int.triton.aalto.fi
+
+   _____      __    _   __     __  ____             __
+  / ___/_____/ /_  / | / /__  / /_/ __ \____ ______/ /__
+  \__ \/ ___/ __ \/  |/ / _ \/ __/ /_/ / __ `/ ___/ //_/
+ ___/ / /__/ / / / /|  /  __/ /_/ ____/ /_/ / /__/ ,<
+/____/\___/_/ /_/_/ |_/\___/\__/_/    \__,_/\___/_/|_|
+
+[2026-11-02 16:29:40,634][schnetpack.cli][INFO] - Running on host: csl9.int.triton.aalto.fi
+
+   _____      __    _   __     __  ____             __
+  / ___/_____/ /_  / | / /__  / /_/ __ \____ ______/ /__
+  \__ \/ ___/ __ \/  |/ / _ \/ __/ /_/ / __ `/ ___/ //_/
+ ___/ / /__/ / / / /|  /  __/ /_/ ____/ /_/ / /__/ ,<
+/____/\___/_/ /_/_/ |_/\___/\__/_/    \__,_/\___/_/|_|
+
+[2026-11-02 16:29:40,634][schnetpack.cli][INFO] - Running on host: csl9.int.triton.aalto.fi
+
+   _____      __    _   __     __  ____             __
+  / ___/_____/ /_  / | / /__  / /_/ __ \____ ______/ /__
+  \__ \/ ___/ __ \/  |/ / _ \/ __/ /_/ / __ `/ ___/ //_/
+ ___/ / /__/ / / / /|  /  __/ /_/ ____/ /_/ / /__/ ,<
+/____/\___/_/ /_/_/ |_/\___/\__/_/    \__,_/\___/_/|_|
+
+[2026-11-02 16:29:40,637][schnetpack.cli][INFO] - Running on host: csl9.int.triton.aalto.fi
+[2026-11-02 16:29:40,644][schnetpack.cli][INFO] - Seed randomly with <3237048162>
+[rank: 6] Seed set to 3237048162
+[2026-11-02 16:29:40,659][schnetpack.cli][INFO] - Instantiating datamodule <schnetpack.datasets.QM9>
+[2026-11-02 16:29:40,720][schnetpack.cli][INFO] - Instantiating model <schnetpack.model.NeuralNetworkPotential>
+[2026-11-02 16:29:40,865][schnetpack.cli][INFO] - Seed randomly with <2059103410>
+[2026-11-02 16:29:40,865][schnetpack.cli][INFO] - Seed randomly with <2459045197>
+[2026-11-02 16:29:40,865][schnetpack.cli][INFO] - Seed randomly with <992846224>
+[2026-11-02 16:29:40,865][schnetpack.cli][INFO] - Seed randomly with <659811322>
+[2026-11-02 16:29:40,866][schnetpack.cli][INFO] - Seed randomly with <3832094592>
+[rank: 1] Seed set to 2059103410
+[rank: 3] Seed set to 2459045197
+[rank: 4] Seed set to 992846224
+[rank: 5] Seed set to 659811322
+[rank: 0] Seed set to 3832094592
+[2026-11-02 16:29:40,867][schnetpack.cli][INFO] - Seed randomly with <2553146872>
+[rank: 2] Seed set to 2553146872
+[2026-11-02 16:29:40,870][schnetpack.cli][INFO] - Seed randomly with <3476406846>
+[rank: 7] Seed set to 3476406846
+[2026-11-02 16:29:40,874][schnetpack.cli][INFO] - Instantiating datamodule <schnetpack.datasets.QM9>
+[2026-11-02 16:29:40,874][schnetpack.cli][INFO] - Instantiating datamodule <schnetpack.datasets.QM9>
+[2026-11-02 16:29:40,874][schnetpack.cli][INFO] - Instantiating datamodule <schnetpack.datasets.QM9>
+[2026-11-02 16:29:40,874][schnetpack.cli][INFO] - Instantiating datamodule <schnetpack.datasets.QM9>
+[2026-11-02 16:29:40,875][schnetpack.cli][INFO] - Instantiating datamodule <schnetpack.datasets.QM9>
+[2026-11-02 16:29:40,874][schnetpack.cli][INFO] - Instantiating datamodule <schnetpack.datasets.QM9>
+[2026-11-02 16:29:40,883][schnetpack.cli][INFO] - Instantiating model <schnetpack.model.NeuralNetworkPotential>
+[2026-11-02 16:29:40,883][schnetpack.cli][INFO] - Instantiating model <schnetpack.model.NeuralNetworkPotential>
+[2026-11-02 16:29:40,883][schnetpack.cli][INFO] - Instantiating model <schnetpack.model.NeuralNetworkPotential>
+[2026-11-02 16:29:40,883][schnetpack.cli][INFO] - Instantiating model <schnetpack.model.NeuralNetworkPotential>
+[2026-11-02 16:29:40,883][schnetpack.cli][INFO] - Instantiating model <schnetpack.model.NeuralNetworkPotential>
+[2026-11-02 16:29:40,883][schnetpack.cli][INFO] - Instantiating model <schnetpack.model.NeuralNetworkPotential>
+⚙ Running with the following config:
+├── run
+│   └── work_dir: ${hydra:runtime.cwd}                                          
+│       data_dir: ${run.work_dir}/data                                          
+│       path: ${run.work_dir}/runs                                              
+│       experiment: qm9_${globals.property}                                     
+│       id: ${uuid:1}                                                           
+│       ckpt_path: null                                                         
+│                                                                               
+├── globals
+│   └── model_path: best_model                                                  
+│       cutoff: 5.0                                                             
+│       lr: 0.0005                                                              
+│       property: energy_U0                                                     
+│       aggregation: sum                                                        
+│                                                                               
+├── data
+│   └── _target_: schnetpack.datasets.QM9                                       
+│       datapath: ${run.data_dir}/qm9.db                                        
+│       data_workdir: null                                                      
+│       batch_size: 100                                                         
+│       num_train: 110000                                                       
+│       num_val: 10000                                                          
+│       num_test: null                                                          
+│       num_workers: 8                                                          
+│       num_val_workers: null                                                   
+│       num_test_workers: null                                                  
+│       train_sampler_cls: null                                                 
+│       remove_uncharacterized: true                                            
+│       distance_unit: Ang                                                      
+│       property_units:                                                         
+│         energy_U0: eV                                                         
+│         energy_U: eV                                                          
+│         enthalpy_H: eV                                                        
+│         free_energy: eV                                                       
+│         homo: eV                                                              
+│         lumo: eV                                                              
+│         gap: eV                                                               
+│         zpve: eV                                                              
+│       transforms:                                                             
+│       - _target_: schnetpack.transform.SubtractCenterOfMass                   
+│       - _target_: schnetpack.transform.RemoveOffsets                          
+│         property: ${globals.property}                                         
+│         remove_atomrefs: true                                                 
+│         remove_mean: true                                                     
+│       - _target_: schnetpack.transform.MatScipyNeighborList                   
+│         cutoff: ${globals.cutoff}                                             
+│       - _target_: schnetpack.transform.CastTo32                               
+│                                                                               
+├── model
+│   └── representation:                                                         
+│         radial_basis:                                                         
+│           _target_: schnetpack.nn.radial.GaussianRBF                          
+│           n_rbf: 20                                                           
+│           cutoff: ${globals.cutoff}                                           
+│         _target_: schnetpack.representation.PaiNN                             
+│         n_atom_basis: 128                                                     
+│         n_interactions: 3                                                     
+│         shared_interactions: false                                            
+│         shared_filters: false                                                 
+│         cutoff_fn:                                                            
+│           _target_: schnetpack.nn.cutoff.CosineCutoff                         
+│           cutoff: ${globals.cutoff}                                           
+│       _target_: schnetpack.model.NeuralNetworkPotential                       
+│       input_modules:                                                          
+│       - _target_: schnetpack.atomistic.PairwiseDistances                      
+│       output_modules:                                                         
+│       - _target_: schnetpack.atomistic.Atomwise                               
+│         output_key: ${globals.property}                                       
+│         n_in: ${model.representation.n_atom_basis}                            
+│         aggregation_mode: ${globals.aggregation}                              
+│       postprocessors:                                                         
+│       - _target_: schnetpack.transform.CastTo64                               
+│       - _target_: schnetpack.transform.AddOffsets                             
+│         property: ${globals.property}                                         
+│         add_mean: true                                                        
+│         add_atomrefs: true                                                    
+│                                                                               
+├── task
+│   └── _target_: schnetpack.AtomisticTask                                      
+│       outputs:                                                                
+│       - _target_: schnetpack.task.ModelOutput                                 
+│         name: ${globals.property}                                             
+│         loss_fn:                                                              
+│           _target_: torch.nn.MSELoss                                          
+│         metrics:                                                              
+│           mae:                                                                
+│             _target_: torchmetrics.regression.MeanAbsoluteError               
+│           rmse:                                                               
+│             _target_: torchmetrics.regression.MeanSquaredError                
+│             squared: false                                                    
+│         loss_weight: 1.0                                                      
+│       warmup_steps: 0                                                         
+│       optimizer_cls: torch.optim.AdamW                                        
+│       optimizer_args:                                                         
+│         lr: ${globals.lr}                                                     
+│         weight_decay: 0.0                                                     
+│       scheduler_cls: schnetpack.train.ReduceLROnPlateau                       
+│       scheduler_monitor: val_loss                                             
+│       scheduler_args:                                                         
+│         mode: min                                                             
+│         factor: 0.5                                                           
+│         patience: 75                                                          
+│         threshold: 0.0                                                        
+│         threshold_mode: rel                                                   
+│         cooldown: 10                                                          
+│         min_lr: 0.0                                                           
+│         smoothing_factor: 0.0                                                 
+│                                                                               
+├── trainer
+│   └── _target_: pytorch_lightning.Trainer                                     
+│       devices: 1                                                              
+│       min_epochs: null                                                        
+│       max_epochs: 100000                                                      
+│       enable_model_summary: true                                              
+│       profiler: null                                                          
+│       gradient_clip_val: null                                                 
+│       accumulate_grad_batches: 1                                              
+│       val_check_interval: 1.0                                                 
+│       check_val_every_n_epoch: 1                                              
+│       num_sanity_val_steps: 0                                                 
+│       fast_dev_run: false                                                     
+│       overfit_batches: 0                                                      
+│       limit_train_batches: 1.0                                                
+│       limit_val_batches: 1.0                                                  
+│       limit_test_batches: 1.0                                                 
+│       detect_anomaly: false                                                   
+│       precision: 32                                                           
+│       accelerator: auto                                                       
+│       num_nodes: 1                                                            
+│       deterministic: false                                                    
+│       inference_mode: false                                                   
+│                                                                               
+├── callbacks
+│   └── model_checkpoint:                                                       
+│         _target_: schnetpack.train.ModelCheckpoint                            
+│         monitor: val_loss                                                     
+│         save_top_k: 1                                                         
+│         save_last: true                                                       
+│         mode: min                                                             
+│         verbose: false                                                        
+│         dirpath: checkpoints/                                                 
+│         filename: '{epoch:02d}'                                               
+│         model_path: ${globals.model_path}                                     
+│       early_stopping:                                                         
+│         _target_: pytorch_lightning.callbacks.EarlyStopping                   
+│         monitor: val_loss                                                     
+│         patience: 200                                                         
+│         mode: min                                                             
+│         min_delta: 0.0                                                        
+│         check_on_train_epoch_end: false                                       
+│       lr_monitor:                                                             
+│         _target_: pytorch_lightning.callbacks.LearningRateMonitor             
+│         logging_interval: epoch                                               
+│       ema:                                                                    
+│         _target_: schnetpack.train.ExponentialMovingAverage                   
+│         decay: 0.995                                                          
+│                                                                               
+├── logger
+│   └── tensorboard:                                                            
+│         _target_: pytorch_lightning.loggers.tensorboard.TensorBoardLogger     
+│         save_dir: tensorboard/                                                
+│         name: default                                                         
+│                                                                               
+└── seed
+    └── 3832094592                                                              
+[2026-11-02 16:29:40,937][schnetpack.cli][INFO] - Instantiating datamodule <schnetpack.datasets.QM9>
+[2026-11-02 16:29:40,945][schnetpack.cli][INFO] - Instantiating model <schnetpack.model.NeuralNetworkPotential>
+[2026-11-02 16:29:41,050][schnetpack.cli][INFO] - Instantiating task <schnetpack.AtomisticTask>
+[2026-11-02 16:29:41,050][schnetpack.cli][INFO] - Instantiating task <schnetpack.AtomisticTask>
+[2026-11-02 16:29:41,050][schnetpack.cli][INFO] - Instantiating task <schnetpack.AtomisticTask>
+[2026-11-02 16:29:41,050][schnetpack.cli][INFO] - Instantiating task <schnetpack.AtomisticTask>
+[2026-11-02 16:29:41,050][schnetpack.cli][INFO] - Instantiating task <schnetpack.AtomisticTask>
+[2026-11-02 16:29:41,050][schnetpack.cli][INFO] - Instantiating task <schnetpack.AtomisticTask>
+[2026-11-02 16:29:41,051][schnetpack.cli][INFO] - Instantiating task <schnetpack.AtomisticTask>
+[2026-11-02 16:29:41,052][schnetpack.cli][INFO] - Instantiating task <schnetpack.AtomisticTask>
+/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/utilities/parsing.py:213: Attribute 'model' is an instance of `nn.Module` and is already saved during checkpointing. It is recommended to ignore them using `self.save_hyperparameters(ignore=['model'])`.
+[2026-11-02 16:29:41,121][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ModelCheckpoint>
+[2026-11-02 16:29:41,121][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ModelCheckpoint>
+[2026-11-02 16:29:41,121][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ModelCheckpoint>
+[2026-11-02 16:29:41,121][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ModelCheckpoint>
+[2026-11-02 16:29:41,121][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ModelCheckpoint>
+[2026-11-02 16:29:41,121][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ModelCheckpoint>
+[2026-11-02 16:29:41,121][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ModelCheckpoint>
+[2026-11-02 16:29:41,121][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ModelCheckpoint>
+[2026-11-02 16:29:41,127][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2026-11-02 16:29:41,127][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2026-11-02 16:29:41,127][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2026-11-02 16:29:41,127][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2026-11-02 16:29:41,127][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2026-11-02 16:29:41,127][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2026-11-02 16:29:41,127][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2026-11-02 16:29:41,127][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2026-11-02 16:29:41,129][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.LearningRateMonitor>
+[2026-11-02 16:29:41,129][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.LearningRateMonitor>
+[2026-11-02 16:29:41,129][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.LearningRateMonitor>
+[2026-11-02 16:29:41,129][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.LearningRateMonitor>
+[2026-11-02 16:29:41,129][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.LearningRateMonitor>
+[2026-11-02 16:29:41,129][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.LearningRateMonitor>
+[2026-11-02 16:29:41,129][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.LearningRateMonitor>
+[2026-11-02 16:29:41,129][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.LearningRateMonitor>
+[2026-11-02 16:29:41,129][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ExponentialMovingAverage>
+[2026-11-02 16:29:41,129][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ExponentialMovingAverage>
+[2026-11-02 16:29:41,129][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ExponentialMovingAverage>
+[2026-11-02 16:29:41,129][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ExponentialMovingAverage>
+[2026-11-02 16:29:41,129][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ExponentialMovingAverage>
+[2026-11-02 16:29:41,129][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ExponentialMovingAverage>
+[2026-11-02 16:29:41,129][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ExponentialMovingAverage>
+[2026-11-02 16:29:41,130][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ExponentialMovingAverage>
+[2026-11-02 16:29:41,130][schnetpack.cli][INFO] - Instantiating logger <pytorch_lightning.loggers.tensorboard.TensorBoardLogger>
+[2026-11-02 16:29:41,130][schnetpack.cli][INFO] - Instantiating logger <pytorch_lightning.loggers.tensorboard.TensorBoardLogger>
+[2026-11-02 16:29:41,130][schnetpack.cli][INFO] - Instantiating logger <pytorch_lightning.loggers.tensorboard.TensorBoardLogger>
+[2026-11-02 16:29:41,130][schnetpack.cli][INFO] - Instantiating logger <pytorch_lightning.loggers.tensorboard.TensorBoardLogger>
+[2026-11-02 16:29:41,130][schnetpack.cli][INFO] - Instantiating logger <pytorch_lightning.loggers.tensorboard.TensorBoardLogger>
+[2026-11-02 16:29:41,130][schnetpack.cli][INFO] - Instantiating logger <pytorch_lightning.loggers.tensorboard.TensorBoardLogger>
+[2026-11-02 16:29:41,130][schnetpack.cli][INFO] - Instantiating logger <pytorch_lightning.loggers.tensorboard.TensorBoardLogger>
+[2026-11-02 16:29:41,131][schnetpack.cli][INFO] - Instantiating logger <pytorch_lightning.loggers.tensorboard.TensorBoardLogger>
+[2026-11-02 16:29:41,137][schnetpack.cli][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2026-11-02 16:29:41,137][schnetpack.cli][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2026-11-02 16:29:41,137][schnetpack.cli][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2026-11-02 16:29:41,137][schnetpack.cli][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2026-11-02 16:29:41,137][schnetpack.cli][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2026-11-02 16:29:41,137][schnetpack.cli][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2026-11-02 16:29:41,137][schnetpack.cli][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2026-11-02 16:29:41,137][schnetpack.cli][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2026-11-02 16:29:41,154][schnetpack.cli][INFO] - Logging hyperparameters.
+[2026-11-02 16:29:41,154][schnetpack.cli][INFO] - Logging hyperparameters.
+[2026-11-02 16:29:41,154][schnetpack.cli][INFO] - Logging hyperparameters.
+[2026-11-02 16:29:41,154][schnetpack.cli][INFO] - Logging hyperparameters.
+[2026-11-02 16:29:41,154][schnetpack.cli][INFO] - Starting training.
+[2026-11-02 16:29:41,154][schnetpack.cli][INFO] - Starting training.
+[2026-11-02 16:29:41,154][schnetpack.cli][INFO] - Starting training.
+[2026-11-02 16:29:41,154][schnetpack.cli][INFO] - Starting training.
+[2026-11-02 16:29:41,154][schnetpack.cli][INFO] - Logging hyperparameters.
+[2026-11-02 16:29:41,154][schnetpack.cli][INFO] - Logging hyperparameters.
+[2026-11-02 16:29:41,154][schnetpack.cli][INFO] - Starting training.
+[2026-11-02 16:29:41,154][schnetpack.cli][INFO] - Starting training.
+[2026-11-02 16:29:41,154][schnetpack.cli][INFO] - Logging hyperparameters.
+[2026-11-02 16:29:41,154][schnetpack.cli][INFO] - Starting training.
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+`Trainer(limit_train_batches=1.0)` was configured so 100% of the batches per epoch will be used..
+`Trainer(limit_val_batches=1.0)` was configured so 100% of the batches will be used..
+`Trainer(limit_test_batches=1.0)` was configured so 100% of the batches will be used..
+`Trainer(val_check_interval=1.0)` was configured so validation will run at the end of the training epoch..
+[2026-11-02 16:29:41,155][schnetpack.cli][INFO] - Logging hyperparameters.
+[2026-11-02 16:29:41,166][root][INFO] - Downloading GDB-9 atom references...
+[2026-11-02 16:29:41,166][root][INFO] - Downloading GDB-9 atom references...
+[2026-11-02 16:29:41,166][root][INFO] - Downloading GDB-9 atom references...
+[2026-11-02 16:29:41,166][root][INFO] - Downloading GDB-9 atom references...
+[2026-11-02 16:29:41,166][root][INFO] - Downloading GDB-9 atom references...
+[2026-11-02 16:29:41,167][root][INFO] - Downloading GDB-9 atom references...
+[2026-11-02 16:29:41,170][root][INFO] - Downloading GDB-9 atom references...
+[2026-11-02 16:29:41,630][schnetpack.cli][INFO] - Starting training.
+[2026-11-02 16:29:41,642][root][INFO] - Done.
+[2026-11-02 16:29:41,643][root][INFO] - Downloading GDB-9 atom references...
+[2026-11-02 16:29:41,643][root][INFO] - Done.
+[2026-11-02 16:29:41,643][root][INFO] - Done.
+[2026-11-02 16:29:41,645][root][INFO] - Done.
+[2026-11-02 16:29:41,647][root][INFO] - Done.
+[2026-11-02 16:29:41,651][root][INFO] - Done.
+[2026-11-02 16:29:41,653][root][INFO] - Done.
+Error executing job with overrides: ['experiment=qm9_atomwise']
+[2026-11-02 16:29:41,798][root][INFO] - Downloading list of uncharacterized molecules...
+Error executing job with overrides: ['experiment=qm9_atomwise']
+Error executing job with overrides: ['experiment=qm9_atomwise']
+Error executing job with overrides: ['experiment=qm9_atomwise']
+Error executing job with overrides: ['experiment=qm9_atomwise']
+Error executing job with overrides: ['experiment=qm9_atomwise']
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/cli.py", line 177, in train
+    trainer.fit(model=task, datamodule=datamodule, ckpt_path=config.run.ckpt_path)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/cli.py", line 177, in train
+    trainer.fit(model=task, datamodule=datamodule, ckpt_path=config.run.ckpt_path)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 584, in fit
+    call._call_and_handle_interrupt(
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 584, in fit
+    call._call_and_handle_interrupt(
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 630, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 1037, in _run
+    self._data_connector.prepare_data()
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/connectors/data_connector.py", line 95, in prepare_data
+    call._call_lightning_datamodule_hook(trainer, "prepare_data")
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/call.py", line 199, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 630, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 1037, in _run
+    self._data_connector.prepare_data()
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/connectors/data_connector.py", line 95, in prepare_data
+    call._call_lightning_datamodule_hook(trainer, "prepare_data")
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/call.py", line 199, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/datasets/qm9.py", line 153, in prepare_data
+    dataset = create_dataset(
+              ^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/atoms.py", line 592, in create_dataset
+    dataset = ASEAtomsData.create(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/atoms.py", line 451, in create
+    conn.metadata = {
+    ^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/ase/db/sqlite.py", line 870, in metadata
+    with self.managed_connection() as con:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/ase/db/sqlite.py", line 205, in managed_connection
+    self._initialize(con)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/ase/db/sqlite.py", line 227, in _initialize
+    con.execute(statement)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/datasets/qm9.py", line 153, in prepare_data
+    dataset = create_dataset(
+              ^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/atoms.py", line 592, in create_dataset
+    dataset = ASEAtomsData.create(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/atoms.py", line 451, in create
+    conn.metadata = {
+    ^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/ase/db/sqlite.py", line 870, in metadata
+    with self.managed_connection() as con:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/ase/db/sqlite.py", line 205, in managed_connection
+    self._initialize(con)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/ase/db/sqlite.py", line 227, in _initialize
+    con.execute(statement)
+sqlite3.OperationalError: table systems already exists
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/cli.py", line 177, in train
+    trainer.fit(model=task, datamodule=datamodule, ckpt_path=config.run.ckpt_path)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 584, in fit
+    call._call_and_handle_interrupt(
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 630, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 1037, in _run
+    self._data_connector.prepare_data()
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/connectors/data_connector.py", line 95, in prepare_data
+    call._call_lightning_datamodule_hook(trainer, "prepare_data")
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/call.py", line 199, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/datasets/qm9.py", line 153, in prepare_data
+    dataset = create_dataset(
+              ^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/atoms.py", line 592, in create_dataset
+    dataset = ASEAtomsData.create(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/atoms.py", line 451, in create
+    conn.metadata = {
+    ^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/ase/db/sqlite.py", line 870, in metadata
+    with self.managed_connection() as con:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/ase/db/sqlite.py", line 205, in managed_connection
+    self._initialize(con)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/ase/db/sqlite.py", line 227, in _initialize
+    con.execute(statement)
+sqlite3.OperationalError: table systems already exists
+sqlite3.OperationalError: table systems already exists
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Traceback (most recent call last):
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/cli.py", line 177, in train
+    trainer.fit(model=task, datamodule=datamodule, ckpt_path=config.run.ckpt_path)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 584, in fit
+    call._call_and_handle_interrupt(
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 630, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 1037, in _run
+    self._data_connector.prepare_data()
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/connectors/data_connector.py", line 95, in prepare_data
+    call._call_lightning_datamodule_hook(trainer, "prepare_data")
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/call.py", line 199, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/datasets/qm9.py", line 153, in prepare_data
+    dataset = create_dataset(
+              ^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/atoms.py", line 592, in create_dataset
+    dataset = ASEAtomsData.create(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/atoms.py", line 451, in create
+    conn.metadata = {
+    ^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/ase/db/sqlite.py", line 870, in metadata
+    with self.managed_connection() as con:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/ase/db/sqlite.py", line 205, in managed_connection
+    self._initialize(con)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/ase/db/sqlite.py", line 227, in _initialize
+    con.execute(statement)
+sqlite3.OperationalError: table systems already exists
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Traceback (most recent call last):
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/cli.py", line 177, in train
+    trainer.fit(model=task, datamodule=datamodule, ckpt_path=config.run.ckpt_path)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 584, in fit
+    call._call_and_handle_interrupt(
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 630, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 1037, in _run
+    self._data_connector.prepare_data()
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/connectors/data_connector.py", line 95, in prepare_data
+    call._call_lightning_datamodule_hook(trainer, "prepare_data")
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/call.py", line 199, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/datasets/qm9.py", line 153, in prepare_data
+    dataset = create_dataset(
+              ^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/atoms.py", line 592, in create_dataset
+    dataset = ASEAtomsData.create(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/atoms.py", line 451, in create
+    conn.metadata = {
+    ^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/ase/db/sqlite.py", line 870, in metadata
+    with self.managed_connection() as con:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/ase/db/sqlite.py", line 205, in managed_connection
+    self._initialize(con)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/ase/db/sqlite.py", line 227, in _initialize
+    con.execute(statement)
+sqlite3.OperationalError: table systems already exists
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Traceback (most recent call last):
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/cli.py", line 177, in train
+    trainer.fit(model=task, datamodule=datamodule, ckpt_path=config.run.ckpt_path)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 584, in fit
+    call._call_and_handle_interrupt(
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 630, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 1037, in _run
+    self._data_connector.prepare_data()
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/connectors/data_connector.py", line 95, in prepare_data
+    call._call_lightning_datamodule_hook(trainer, "prepare_data")
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/call.py", line 199, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/datasets/qm9.py", line 153, in prepare_data
+    dataset = create_dataset(
+              ^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/atoms.py", line 592, in create_dataset
+    dataset = ASEAtomsData.create(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/atoms.py", line 451, in create
+    conn.metadata = {
+    ^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/ase/db/sqlite.py", line 870, in metadata
+    with self.managed_connection() as con:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/ase/db/sqlite.py", line 205, in managed_connection
+    self._initialize(con)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/ase/db/sqlite.py", line 227, in _initialize
+    con.execute(statement)
+sqlite3.OperationalError: table systems already exists
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+[2026-11-02 16:29:41,976][root][INFO] - Done.
+Error executing job with overrides: ['experiment=qm9_atomwise']
+Traceback (most recent call last):
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/cli.py", line 177, in train
+    trainer.fit(model=task, datamodule=datamodule, ckpt_path=config.run.ckpt_path)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 584, in fit
+    call._call_and_handle_interrupt(
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 630, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/trainer.py", line 1037, in _run
+    self._data_connector.prepare_data()
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/connectors/data_connector.py", line 95, in prepare_data
+    call._call_lightning_datamodule_hook(trainer, "prepare_data")
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/pytorch_lightning/trainer/call.py", line 199, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/datasets/qm9.py", line 153, in prepare_data
+    dataset = create_dataset(
+              ^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/atoms.py", line 592, in create_dataset
+    dataset = ASEAtomsData.create(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/work/riekkia3/.conda_envs/schnetpack/lib/python3.12/site-packages/schnetpack/data/atoms.py", line 446, in create
+    raise AtomsDataError(f"Dataset already exists: {datapath}")
+schnetpack.data.atoms.AtomsDataError: Dataset already exists: /scratch/work/riekkia3/Special_Assignment/SCHNETPACK/data/qm9.db
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+[2026-11-02 16:29:42,341][root][INFO] - Done.
+[2026-11-02 16:29:42,344][root][INFO] - Downloading GDB-9 data...
+[2026-11-02 16:29:51,550][root][INFO] - Done.
+[2026-11-02 16:29:51,550][root][INFO] - Extracting files...
+srun: error: csl9: tasks 0-5,7: Exited with exit code 1
+srun: Terminating StepId=21358748.0
+[2026-11-02T16:30:11.621] error: *** STEP 21358748.0 ON csl9 CANCELLED AT 2026-11-02T16:30:11 DUE TO TASK FAILURE ***
+srun: error: csl9: task 6: Terminated
+srun: Force Terminated StepId=21358748.0

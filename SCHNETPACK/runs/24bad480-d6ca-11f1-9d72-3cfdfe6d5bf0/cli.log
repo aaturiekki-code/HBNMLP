@@ -1,0 +1,13 @@
+[2026-11-02 16:31:51,334][schnetpack.cli][INFO] - Running on host: csl9.int.triton.aalto.fi
+[2026-11-02 16:31:51,574][schnetpack.cli][INFO] - Seed randomly with <3650306237>
+[2026-11-02 16:31:51,642][schnetpack.cli][INFO] - Instantiating datamodule <schnetpack.datasets.QM9>
+[2026-11-02 16:31:51,650][schnetpack.cli][INFO] - Instantiating model <schnetpack.model.NeuralNetworkPotential>
+[2026-11-02 16:31:51,663][schnetpack.cli][INFO] - Instantiating task <schnetpack.AtomisticTask>
+[2026-11-02 16:31:51,703][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ModelCheckpoint>
+[2026-11-02 16:31:51,706][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2026-11-02 16:31:51,707][schnetpack.cli][INFO] - Instantiating callback <pytorch_lightning.callbacks.LearningRateMonitor>
+[2026-11-02 16:31:51,708][schnetpack.cli][INFO] - Instantiating callback <schnetpack.train.ExponentialMovingAverage>
+[2026-11-02 16:31:51,708][schnetpack.cli][INFO] - Instantiating logger <pytorch_lightning.loggers.tensorboard.TensorBoardLogger>
+[2026-11-02 16:31:51,710][schnetpack.cli][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2026-11-02 16:31:51,724][schnetpack.cli][INFO] - Logging hyperparameters.
+[2026-11-02 16:31:52,072][schnetpack.cli][INFO] - Starting training.
