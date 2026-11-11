@@ -1,149 +1,175 @@
 #!/usr/bin/env python3
+"""Generate missing QE sweep configurations without submitting jobs."""
+
 import argparse
-import pathlib
+import itertools
+from pathlib import Path
+import re
 import subprocess
 import sys
+
 import numpy as np
 
-def parse_range(range_args, default_val=None):
-    if range_args is None:
-        return [default_val] if default_val is not None else [None]
-    if len(range_args) != 3:
-        raise ValueError("Each range must contain exactly 3 arguments: [start] [end] [points]")
-    start, end, count = range_args[0], range_args[1], int(range_args[2])
-    if count <= 0:
-        raise ValueError("The amount of points must be >= 1")
-    if count == 1:
-        return [start]
+
+def parse_range(values, default=None):
+    if values is None:
+        return [default]
+
+    if not np.isfinite(values).all():
+        raise ValueError("Range values must be finite")
+
+    start, end, count_value = values
+    count = int(count_value)
+
+    if count < 1 or count != count_value:
+        raise ValueError("Point count must be a positive integer")
+
     return np.linspace(start, end, count).tolist()
 
-def filter_overridden_args(arg_list, flags_to_remove):
-    filtered = []
-    skip_count = 0
-    for i, item in enumerate(arg_list):
-        if skip_count > 0:
-            skip_count -= 1
-            continue
-        if item in flags_to_remove:
-            skip_count = 2 if item == '--slide' else 1
-            continue
-        filtered.append(item)
-    return filtered
 
-def write_master_submit_script(parent_dir: pathlib.Path):
-    submit_script_path = parent_dir / "submit_all.sh"
-    parent_name = parent_dir.name
-    
-    text = f"""#!/bin/bash
-#SBATCH --job-name={parent_name}_submit_all
-#SBATCH --time=00:30:00
-#SBATCH --mem=1G
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=1
-#SBATCH --output=slurm-%x-%j.out
+def remove_overrides(arguments):
+    arities = {
+        "--distance": 1,
+        "--scale-xy": 1,
+        "--slide": 2,
+        "-o": 1,
+        "--output": 1,
+        "--name": 1,
+        "--slurm-name": 1,
+        "--overwrite": 0,
+        "--no-overwrite": 0,
+    }
 
-if [ -n "$SLURM_SUBMIT_DIR" ]; then
-    PARENT_DIR="$SLURM_SUBMIT_DIR"
-else
-    PARENT_DIR="$( cd "$( dirname "${{BASH_SOURCE[0]}}" )" && pwd )"
-fi
+    result = []
+    index = 0
 
-cd "$PARENT_DIR"
-shopt -s nullglob
+    while index < len(arguments):
+        argument = arguments[index]
+        flag = argument.split("=", 1)[0]
 
-for job_dir in */; do
-    job_dir="${{job_dir%/}}"
-    if [ -f "$PARENT_DIR/$job_dir/run.sh" ]; then
-        echo "Submitting: $job_dir ..."
-        (cd "$PARENT_DIR/$job_dir" && sbatch run.sh)
-    fi
-done
-"""
-    submit_script_path.write_text(text, encoding="utf-8")
-    try:
-        submit_script_path.chmod(submit_script_path.stat().st_mode | 0o111)
-    except Exception:
-        pass
+        if flag in arities:
+            index += 1 if "=" in argument else 1 + arities[flag]
+        else:
+            result.append(argument)
+            index += 1
+
+    return result
+
 
 def main():
-    ap = argparse.ArgumentParser(description="Sweeps structures over ranges of configurations.", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    ap.add_argument("--parent-dir", required=True, type=pathlib.Path)
-    ap.add_argument("--distance-range", nargs=3, type=float, default=None)
-    ap.add_argument("--scale-range", nargs=3, type=float, default=None)
-    ap.add_argument("--slide-x-range", nargs=3, type=float, default=None)
-    ap.add_argument("--slide-y-range", nargs=3, type=float, default=None)
+    parser = argparse.ArgumentParser(
+        description=__doc__, allow_abbrev=False
+    )
+    parser.add_argument("--parent-dir", required=True, type=Path)
+    parser.add_argument("--distance-range", nargs=3, type=float)
+    parser.add_argument("--scale-range", nargs=3, type=float)
+    parser.add_argument("--slide-x-range", nargs=3, type=float)
+    parser.add_argument("--slide-y-range", nargs=3, type=float)
+    parser.add_argument("--variant-tag")
 
-    args, forwarded_args = ap.parse_known_args()
+    args, forwarded = parser.parse_known_args()
+    forwarded = remove_overrides(forwarded)
 
-    script_dir = pathlib.Path(__file__).resolve().parent
-    createscf_path = script_dir / "createscf.py"
-    if not createscf_path.exists():
-        print(f"Error: createscf.py not found in {script_dir}", file=sys.stderr)
-        sys.exit(1)
-
-    forwarded_args = filter_overridden_args(forwarded_args, ['--distance', '--scale-xy', '--slide', '-o', '--output', '--name', '--slurm-name'])
+    if args.variant_tag and not re.fullmatch(
+        r"[A-Za-z0-9_-]+", args.variant_tag
+    ):
+        parser.error("Invalid variant tag")
 
     try:
-        distances = parse_range(args.distance_range, default_val=None)
-        scales = parse_range(args.scale_range, default_val=1.44)
-        slides_x = parse_range(args.slide_x_range, default_val=None)
-        slides_y = parse_range(args.slide_y_range, default_val=None)
-    except ValueError as e:
-        print(f"Error: {e}", file=sys.stderr)
-        sys.exit(2)
+        distances = parse_range(args.distance_range)
+        scales = parse_range(args.scale_range, 1.44)
+        xs = parse_range(args.slide_x_range)
+        ys = parse_range(args.slide_y_range)
+    except ValueError as error:
+        parser.error(str(error))
 
-    slide_pairs = []
-    if slides_x[0] is not None and slides_y[0] is not None:
-        for sx in slides_x:
-            for sy in slides_y:
-                slide_pairs.append((sx, sy))
-    elif slides_x[0] is not None:
-        for sx in slides_x:
-            slide_pairs.append((sx, 0.0))
-    elif slides_y[0] is not None:
-        for sy in slides_y:
-            slide_pairs.append((0.0, sy))
+    if xs == [None] and ys == [None]:
+        slides = [(None, None)]
     else:
-        slide_pairs.append((None, None))
+        slides = list(itertools.product(
+            [0.0] if xs == [None] else xs,
+            [0.0] if ys == [None] else ys,
+        ))
 
-    args.parent_dir.mkdir(parents=True, exist_ok=True)
-    parent_folder_name = args.parent_dir.name
+    parent = args.parent_dir.expanduser().resolve()
+    parent.mkdir(parents=True, exist_ok=True)
 
-    for dist in distances:
-        for scale in scales:
-            for sx, sy in slide_pairs:
-                folder_parts = []
-                job_name_parts = [parent_folder_name]
+    generator = Path(__file__).resolve().parent / "createscf.py"
+    if not generator.is_file():
+        parser.error(f"Missing {generator}")
 
-                if dist is not None:
-                    folder_parts.append(f"dist_{dist:.3f}")
-                    job_name_parts.append(f"d{dist:.2f}")
-                folder_parts.append(f"scale_{scale:.3f}")
-                job_name_parts.append(f"s{scale:.2f}")
-                if sx is not None and sy is not None:
-                    folder_parts.append(f"slide_{sx:.3f}_{sy:.3f}")
-                    job_name_parts.append(f"sl{sx:.2f}_{sy:.2f}")
+    configurations = []
+    names = set()
 
-                subfolder_name = "_".join(folder_parts)
-                unique_job_name = "_".join(job_name_parts)
-                job_dir = args.parent_dir / subfolder_name
+    for distance, scale, (sx, sy) in itertools.product(
+        distances, scales, slides
+    ):
+        parts = []
+        if distance is not None:
+            parts.append(f"dist_{distance:.3f}")
+        parts.append(f"scale_{scale:.3f}")
+        if sx is not None:
+            parts.append(f"slide_{sx:.3f}_{sy:.3f}")
+        if args.variant_tag:
+            parts.append(f"variant_{args.variant_tag}")
 
-                cmd = [sys.executable, str(createscf_path), "-o", str(job_dir), "--scale-xy", f"{scale:.6f}", "--slurm-name", unique_job_name]
-                if dist is not None:
-                    cmd += ["--distance", f"{dist:.6f}"]
-                if sx is not None and sy is not None:
-                    cmd += ["--slide", f"{sx:.6f}", f"{sy:.6f}"]
-                cmd += forwarded_args
+        name = "_".join(parts)
+        if name in names:
+            parser.error(f"Rounded folder-name collision: {name}")
 
-                try:
-                    subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, check=True)
-                except subprocess.CalledProcessError as e:
-                    print(f"FAILED generation for {subfolder_name}!\n{e.stderr}", file=sys.stderr)
-                    sys.exit(e.returncode)
+        names.add(name)
+        configurations.append((name, distance, scale, sx, sy))
 
-    write_master_submit_script(args.parent_dir)
-    print(f"Sweep layouts complete. Launch with 'sbatch submit_all.sh' inside: {args.parent_dir.resolve()}")
+    added = skipped = failed = 0
+
+    for name, distance, scale, sx, sy in configurations:
+        folder = parent / name
+
+        if folder.exists():
+            skipped += 1
+            continue
+
+        command = [
+            sys.executable, str(generator),
+            "-o", str(folder),
+            "--no-overwrite",
+            "--scale-xy", f"{scale:.6f}",
+            "--slurm-name", f"{parent.name}_{name}",
+        ]
+
+        if distance is not None:
+            command += ["--distance", f"{distance:.6f}"]
+        if sx is not None:
+            command += ["--slide", f"{sx:.6f}", f"{sy:.6f}"]
+
+        command += forwarded
+        result = subprocess.run(
+            command, capture_output=True, text=True
+        )
+
+        complete = all(
+            (folder / filename).is_file()
+            for filename in (
+                "pw.in", "run.sh", "createscf_meta.json"
+            )
+        )
+
+        if result.returncode or not complete:
+            failed += 1
+            print(
+                f"[FAILED] {folder}\n{result.stdout}\n{result.stderr}",
+                file=sys.stderr,
+            )
+        else:
+            added += 1
+            print(f"[ADDED] {folder}")
+
+    print(f"Added={added}, existing/skipped={skipped}, failed={failed}")
+    print("No jobs submitted.")
+
+    if failed:
+        sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
